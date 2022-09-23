@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./font/fontawesome-free-5.15.2-web/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Gridlayout/grid.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="icon" href="./img/home/logo.png">
+    <title>Cart</title>
+    <style>
+
+    .sum__bill{
+        position: relative;
+        top: -100px;
+    }
+    .btn_buy {
+        z-index: 1;
+        position: relative;
+        color: white;
+        margin: 30px;
+        font-size: 2.7rem;
+        padding: 20px;
+        width: 150px;
+        border-radius: 2px;
+        outline: none;
+        border: none;
+        background-color: #abd373;
+        overflow: hidden;
+        cursor: pointer;
+        left: 1000px
+}
+
+.btn_buy::after {
+  content: '';
+  z-index: -1;
+  background-color: hsla(0, 0%, 100%, 0.2);
+  position: absolute;
+  top: -50%;
+  bottom: -50%;
+  width: 1.25em;
+  transform: translate3d(-525%, 0, 0) rotate(35deg);
+}
+
+.btn_buy:hover::after {
+  transition: transform 0.45s ease-in-out;
+  transform: translate3d(200%, 0, 0) rotate(35deg);
+}
+.navbar{
+    display: block;
+}
+    </style>
+</head>
+<body>
+    <!-- <div class="loader__wrap">
+        <i class="loader">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </i>
+    </div> -->
+
+    <!-- Header start -->
+    <div class="header">
+        <div class="grid wide">
+            <div class="header__top">
+                <div class="header__top-head hide-on-mobile-tablet">
+                    <div class="header__social">
+                        <span>Follow us:</span>
+                        <a href="" class="header__social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="" class="header__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="" class="header__social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="header__user">
+                        <div class="header__user-login">
+                            <a href="/login" class="header__user-link"><span>Login</span><i class="fas fa-sign-in-alt"></i></a>
+                        </div>
+
+                        <div class="header__user-register">
+                            <a href="/registers" class="header__user-link"><span>Register</span><i class="fas fa-user-plus"></i></a>
+                        </div>
+
+                        <div class="header__user-auth hidden">
+                            <a href="/profile" class="header__user-link"><img  src="./img/ngoc.jpg" style="width:20px ; height:20px; border-radius: 10px; margin-top:3px;" alt=""><span class="nick__name">Your Name !</span></a>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="header__top-body">
+                    <div class="header__logo">
+                                <a href="/" class="header__logo-link"><img src="../img/logo.webp" alt=""></a>
+                            </div>
+    
+                            <div class="header__search hide-on-mobile-tablet">
+                                <input type="text" placeholder="Search here...">
+                                <button>
+                                    <a href="" class="header__search-link"><i class="header__search-icon fas fa-search"></i></a>
+                                </button>
+                            </div>
+    
+                            <div class="header__cart"> 
+                                <div class="header__search-on-tablet">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                
+                                <button class=""><a href="/cart"><i class="header__cart-icon fas fa-cart-plus"></i></a></button>
+                                
+                                <label for="nav-mobile-input" class="nav__bars-btn">
+                                    <i class="fas fa-bars"></i>
+                                </label>
+
+                                <input type="checkbox" hidden name="" class="nav__input" id="nav-mobile-input">
+                                
+
+                                <label for="nav-mobile-input" class="nav__overlay"></label>
+
+                                <div class="navbar__mobile">
+                                    <label for="nav-mobile-input" class="nav__mobile-close">
+                                        <i class="fas fa-times"></i>
+                                    </label>
+
+                                    <ul class="nav__mobile-list">
+                                        <li class="nav__mobile-item"><a class="nav__mobile-link" href="/">Home</a></li>
+                                        <li class="nav__mobile-item"><a class="nav__mobile-link" href="/about-us">About us</a></li>
+                                        <li class="nav__mobile-item">
+                                            <input type="checkbox" hidden class="nav__input-product" id="nav__product-id">
+                                            <label for="nav__product-id" class="nav__mobile-link">
+                                                <span>Product</span>
+                                                <i class="nav__mobile-icon fas fa-chevron-down"></i>
+                                            </label>
+                                            <div class="nav__mobile-product">
+                                                <ul class="nav__mobile-product-list">
+                                                    <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryAll.html">All</a></li>
+                                                    <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryIndoor.html">Indoor Living</a></li>
+                                                    <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryPerennials.html">Perennials</a></li>
+                                                    <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryGift.html">Plant for Gift</a></li>
+                                                    <li class="nav__mobile-product-item"><a class="nav__mobile-product-link" href="categoryAll.html">Garden Tools</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="nav__mobile-item"><a class="nav__mobile-link" href="">News</a></li>
+                                        <li class="nav__mobile-item"><a class="nav__mobile-link" href="">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header__bottom hide-on-mobile-tablet">
+        <div class="grid wide">
+            <div class="navbar">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/" class="nav__item-link">Home</a></li>
+                    <li class="nav__item"><a href="/about-us" class="nav__item-link">About us</a></li>
+                    <li class="nav__item">
+                        <a href="/category" class="nav__item-link">Product<i class="fas fa-chevron-down" id="nav__produce-icon"></i></a>
+                        
+                        <div class="nav__produce">
+                            <ul class="nav__produce-list">
+                                <li class="nav__produce-item"><a href="categoryAll.html" class="nav__produce-link">All</a></li>
+                                <li class="nav__produce-item"><a href="categoryIndoor.html" class="nav__produce-link">Indoor Living</a></li>
+                                <li class="nav__produce-item"><a href="categoryPerennials.html" class="nav__produce-link">Perennials</a></li>
+                                <li class="nav__produce-item"><a href="categoryGift.html" class="nav__produce-link">Plant for Gift</a></li>
+                                <li class="nav__produce-item"><a href="categoryAll.html" class="nav__produce-link">Garden Tools</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav__item"><a href="" class="nav__item-link">News</a></li>
+                    <li class="nav__item"><a href="" class="nav__item-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Header end -->
+    <div class="grid wide">
+        <div class="cart__nav">
+            <div class="row">
+                <div class="col m-auto text-center">
+                    <input class="check_all" style="width:2rem; height:2rem;" type="checkbox" value="" id="1" checked>
+                </div>
+                <div class="col-4">
+                    <p class="fs-3">Products</p>
+                </div>
+                <div class="col">
+                    <p class="text-center fs-3">Unit price</p>
+                </div>
+                <div class="col">
+                    <p class="text-center fs-3">Amount</p>
+                </div>
+                <div class="col">
+                    <p class="text-center fs-3">Bill</p>
+                </div>
+                <div class="col">
+                    <p class="text-center fs-3">Manipulation</p>
+                </div>
+            </div>
+        </div>
+        
+        <form class="cart_list-form" action="/cart" method="post">
+            {Cart-list}
+            <button class="btn_buy">Pay</button>
+            <div class="sum__bill">
+                <p class="text-center fs-2 sum__bill-notice"></p>
+                <p class="text-center fs-2 sum__bill-money"></p>
+            </div>
+        </form>
+        
+        
+    </div>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-4 m-12 c-12 footer__info">
+                    <img class="footer__logo" src="../img/logo.webp" alt="logo">
+                    <p class="footer__info-item">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur at doloremque libero sed cumque et, animi perspiciat</p>
+                    <p class="footer__info-item">Address: 70 Dong Anh, Lien Ha 15, District 11, Ha Noi City</p>
+                </div>
+                <div class="col l-2 m-6 c-12">
+                    <h3 class="footer__head">Useful links</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">How to shop</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">FAQ</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Log in</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Question?</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">See More</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l-2 m-6 c-12"> 
+                    <h3 class="footer__head">Contact us</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">
+                                Phone number: 0399620226
+                            </a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">
+                                Email: support@gmail.com
+                            </a>
+                        </li>
+                        <!-- 4 bieu tuong mxh -->
+                        <li class="footer__item-icon ">       
+                            <a href="" class="footer__icon"><i class="fab fa-facebook"></i></a>
+                            <a href="" class="footer__icon"><i class="fab fa-twitter"></i></a>
+                            <a href="" class="footer__icon"><i class="fab fa-instagram"></i></a>
+                            <a href="" class="footer__icon"><i class="fab fa-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l-2 m-6 c-12">
+                    <h3 class="footer__head">My Account</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Sign In</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">View Cart</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">My Whishlist</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Track My Order</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Help</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l-2 m-6 c-12">
+                    <h3 class="footer__head">Our Service</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Payment Methods</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Money Guarantee!</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Returns</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Shipping</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2021 Team One Made With &heartsuit;</p>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+    <button href="" class="back-to-top active">
+        <i class="back-to-top-icon fa fa-angle-double-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script>
+        const quantityProducts = document.querySelectorAll('.cart_quantity');
+        const textBill = document.querySelectorAll('.text_bill');
+        const textProduct = document.querySelectorAll('.text_product');
+        const checkboxes = document.getElementsByName('idProducts');
+        const btnCheckAll = document.querySelector(".check_all");
+        const SumBillNotice = document.querySelector('.sum__bill-notice');
+        const SumBillMoney = document.querySelector('.sum__bill-money');
+        const formListCart = document.querySelector('.cart_list-form');
+        const btnBuy = document.querySelector('.btn_buy');
+        let count = checkboxes.length;
+        let sum = 0;
+        SumBillNotice.innerText = `You have ${count} products`
+        btnCheckAll.addEventListener('click',()=>{
+            if(btnCheckAll.checked == true){
+                checkboxes.forEach(e=>{
+                    e.checked = true;
+                })
+                count = 3;
+                SumBillNotice.innerText = `You have ${count} products`
+            }
+            if(btnCheckAll.checked == false){
+                checkboxes.forEach(e=>{
+                    e.checked = false;
+                })
+                count = 0;
+                SumBillNotice.innerText = `You have ${count} products`;
+            }
+        })
+        
+        for(let i = 0; i < checkboxes.length;i++){
+            checkboxes[i].addEventListener('click',()=>{
+                if(checkboxes[i].checked == true){
+                    count++;
+                    SumBillNotice.innerText = `You have ${count} products`
+                }
+                if(checkboxes[i].checked == false){
+                    count--;
+                    SumBillNotice.innerText = `You have ${count} products`
+                }
+            })
+        }
+        
+
+        for(let i = 0;i<quantityProducts.length;i++){
+            let result = Math.round(quantityProducts[i].value * textProduct[i].innerText * 100) / 100
+            textBill[i].innerText = result + "$";
+            let prevValue = Number(document.querySelectorAll('.cart_quantity')[i].value);
+            quantityProducts[i].addEventListener('change',()=>{
+                let value = Number(document.querySelectorAll('.cart_quantity')[i].value);
+                result = Math.round(quantityProducts[i].value * textProduct[i].innerText * 100) / 100
+                textBill[i].innerText = result + "$";
+                if(prevValue > value){
+                    sum -= Number(textProduct[i].innerText);
+                    console.log(sum)
+                    SumBillMoney.innerText = Math.round(sum*100)/100 + "$";
+                    console.log(prevValue , value);
+                }
+                if(prevValue < value){
+                    sum += Number(textProduct[i].innerText) ;
+                    SumBillMoney.innerText = Math.round(sum*100)/100 + "$";
+                    console.log(prevValue , value);
+                }
+                if(prevValue == value){
+                    SumBillMoney.innerText = Math.round(sum*100)/100 + "$";
+                }
+
+                prevValue = value;
+                
+            })          
+            sum += result;
+        }
+        SumBillMoney.innerText = sum + "$";
+        btnBuy.addEventListener("click",(e)=>{
+            formListCart.action = `/cart?${sum}`
+        })
+
+    </script>
+    <!-- <script src="./js/main.js"></script> -->
+</body>
+</html>

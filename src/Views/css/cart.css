@@ -1,0 +1,13 @@
+.cart__nav{
+    margin-top:20px;
+    padding:20px;
+    box-shadow: rgba(28, 110, 85, 0.15) 0px 48px 100px 0px;
+    background-color: var(--green);
+}
+
+.cart__product{
+    margin-top:40px;
+    padding:20px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+

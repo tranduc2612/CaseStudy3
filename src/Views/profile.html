@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./font/fontawesome-free-5.15.2-web/css/all.min.css">
+    <link rel="stylesheet" href="./Gridlayout/grid.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./css/profile.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" href="./img/home/logo.png">
+    <title>My Profile</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <div class="sidebar d-flex flex-column flex-shrink-0" style="height:100vh">
+                    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+                        <li class="nav-item"> <a href="/" class="nav-link p-5 border-bottom"> <i class="fa fa-home"></i> <small>Home</small> </a> </li>
+                        <li> <a href="/cart" class="nav-link p-5 border-bottom"> <i class="fa fas fa-shopping-cart"></i> <small>My Cart</small> </a> </li>
+                        <li> <a href="/setting" class="nav-link p-5 border-bottom"> <i class="fa fa-cog"></i> <small>Settings</small> </a> </li>
+                        <li> <a href="/logout" class="nav-link p-5 border-bottom" method="GET"> <i class="fa fas fa-sign-out-alt"></i> <small>Log out</small> </a> </li>
+                    </ul>
+                </div>
+            </div>
+            
+
+            <div class="col-10">
+                <nav class="navbar navbar-expand-lg navbar-light p-4">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="#">
+                        <img src="./img/logo.webp" alt="">
+                      </a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                          <li class="custom__hover nav-item dropdown">
+                            <a class="nav__link dropdown-toggle fs-4" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                              <img src="./img/ngoc.jpg" alt="" width="50px" Height="50px" style="border-radius:50%">
+                              {Your Name !}
+                            </a>
+                            <ul class="dropdown-menu fs-4" aria-labelledby="navbarDropdownMenuLink" style="right: 0">
+                              <li><a class="dropdown-item " href="/">Home</a></li>
+                              <li><a class="dropdown-item " href="/cart">My Cart</a></li>
+                              <li><a class="dropdown-item " href="#">Setting</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item " href="/logout">Log out</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+
+                  <!-- <div class="row">
+                    <div class="col-3">
+                        <div class="cart__bg-1 cart justify-content-around">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16" style="color:green;position:relative;top:10px">
+                                <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+                                <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
+                                <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
+                                <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
+                              </svg>
+                            <div class="cart__wrap d-flex flex-column">
+                                <span class="cart__text">
+                                    Revenues
+                                </span>
+                                <span class="cart__total">
+                                    10000$
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="cart__bg-2 cart justify-content-around">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16" style="color:purple;position:relative">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                              </svg>
+                            <div class="cart__wrap d-flex flex-column">
+                                <span class="cart__text">
+                                    Sale
+                                </span>
+                                <span class="cart__total">
+                                    1000
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="cart__bg-3 cart justify-content-around">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16" style="color:blue;position:relative">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                              </svg>
+                            <div class="cart__wrap d-flex flex-column">
+                                <span class="cart__text">
+                                    Account
+                                </span>
+                                <span class="cart__total">
+                                    4000
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="cart__bg-4 cart justify-content-around">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-box-seam-fill" viewBox="0 0 16 16" style="color:orange;position:relative">
+                                <path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.01-.003.268-.108a.75.75 0 0 1 .558 0l.269.108.01.003 6.97 2.789ZM10.404 2 4.25 4.461 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339L8 5.961 5.596 5l6.154-2.461L10.404 2Z"/>
+                              </svg>
+                            <div class="cart__wrap d-flex flex-column">
+                                <span class="cart__text">
+                                    Products
+                                </span>
+                                <span class="cart__total">
+                                    1000
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                  </div> -->
+                  
+                  <div class="row">
+                    <form action="/" method="post">
+                        <div class="mb-3 fs-3 row" style="margin-top:100px">
+                            <p class="text-center fs-1" style="font-weight:bold">Change Your Password</p>
+                            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10 mb-5">
+                              <input type="text" name="email" readonly class="form-control fs-1-plaintext fs-1" id="staticEmail" value="email@example.com" style="outline: none;">
+                            </div>
+                          </div>
+                          <div class="mb-3 fs-3 row">
+                            <label for="inputPassword" id="current__password" class="col-sm-2 col-form-label">Current Password</label>
+                            <div class="col-sm-10 mb-5">
+                              <input name="password" type="password" class="Current Password form-control fs-1" id="inputPassword">
+                            </div>
+        
+                            <label for="inputPassword" id="new__password" class="col-sm-2 col-form-label">New Password</label>
+                            <div class="col-sm-10 mb-5">
+                              <input type="password" class="New Password form-control fs-1" id="inputPassword">
+                            </div>
+        
+                            <label for="inputPassword" id="new__password-again" class="col-sm-2 col-form-label">New Password Again</label>
+                            <div class="col-sm-10 mb-5">
+                              <input type="password" class="New Password Again form-control fs-1" id="inputPassword">
+                            </div>
+                          </div>
+                          <button type="submit" class="btn btn-outline-dark fs-1 mx-auto d-block" >Submit</button>
+                    </form>
+                  </div>
+                 </div>
+        </div>
+        
+    </div>
+
+    <!-- footer -->
+    <!-- <footer class="footer">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-4 m-12 c-12 footer__info">
+                    <img class="footer__logo" src="../img/logo.webp" alt="logo">
+                    <p class="footer__info-item">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur at doloremque libero sed cumque et, animi perspiciat</p>
+                    <p class="footer__info-item">Address: 70 Dong Anh, Lien Ha 15, District 11, Ha Noi City</p>
+                </div>
+                <div class="col l-2 m-6 c-12">
+                    <h3 class="footer__head">Useful links</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">How to shop</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">FAQ</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Log in</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Question?</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">See More</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l-2 m-6 c-12"> 
+                    <h3 class="footer__head">Contact us</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">
+                                Phone number: 0399620226
+                            </a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">
+                                Email: support@gmail.com
+                            </a>
+                        </li>
+                        <li class="footer__item-icon ">       
+                            <a href="" class="footer__icon"><i class="fab fa-facebook"></i></a>
+                            <a href="" class="footer__icon"><i class="fab fa-twitter"></i></a>
+                            <a href="" class="footer__icon"><i class="fab fa-instagram"></i></a>
+                            <a href="" class="footer__icon"><i class="fab fa-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l-2 m-6 c-12">
+                    <h3 class="footer__head">My Account</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Sign In</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">View Cart</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">My Whishlist</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Track My Order</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Help</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l-2 m-6 c-12">
+                    <h3 class="footer__head">Our Service</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Payment Methods</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Money Guarantee!</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Returns</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Shipping</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__item-link">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2021 Team One Made With &heartsuit;</p>
+            </div>
+        </div>
+    </footer> -->
+    <!-- footer end -->
+    <button href="" class="back-to-top active">
+        <i class="back-to-top-icon fa fa-angle-double-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <!-- <script src="./js/main.js"></script> -->
+</body>
+</html>
