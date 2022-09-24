@@ -5,7 +5,7 @@ const url = require("url");
 const fs = require("fs");
 const qs = require("qs");
 const PART = "Casestudy3";
-const COMPUTER = "DELL" || "OSC";
+const COMPUTER = "OSC" || "DELL";
 const authController = AuthController.AccountController;
 async function Router(req, res) {
   let parseUrl = url.parse(req.url, true);
@@ -26,12 +26,12 @@ async function Router(req, res) {
   const filesDefences = path.match(
     /\.js|\.css|\.png|\.svg|\.jpg|\.ttf|\.woff|\.woff2|\.eot|\.webp/
   );
-  
+
   if (filesDefences) {
     const extension = mimeTypes[filesDefences[0].toString().split(".")[1]];
     res.writeHead(200, { "Content-Type": extension });
     fs.createReadStream(
-      "C:\\Users\\"+COMPUTER+"\\Desktop\\" + PART + "\\src\\Views" + req.url
+      "C:\\Users\\" + COMPUTER + "\\Desktop\\" + PART + "\\src\\Views" + req.url
     ).pipe(res);
   } else {
     console.log(path);

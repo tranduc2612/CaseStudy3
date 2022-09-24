@@ -75,6 +75,7 @@ select * from Bill;
 insert Bill value (1,2,100);
 delete from Bill where BillID = 3;
 
+
 delete from Cart where userID = 2 and ProductsID = 8;
 select * from cart where ProductsId = 2 and userId = 2;
 UPDATE Cart
@@ -85,5 +86,6 @@ WHERE ProductsID = 2 and userID = 2;
 select Products.ProductsID,img,productsName,currentPrice,slBan from Products
  inner join Cart on Products.ProductsID = Cart.ProductsID where Cart.userID = 2;
 
-
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345678';
+FLUSH PRIVILEGES;
 

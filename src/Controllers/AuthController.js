@@ -143,26 +143,15 @@ class AccountController {
     }
   }
 
-  async showAdminPage(req, res, isLogin) {
-    if (isLogin) {
-      await fs.readFile(
-        "./src/Views/admin.html",
-        "utf-8",
-        function (err, data) {
-          if (err) {
-            console.log(err.message);
-          }
-
-          res.writeHead(200, { "Content-Type": "text/html" });
-          res.write(data);
-          return res.end();
-        }
-      );
-    } else {
-      res.statusCode = 302;
-      res.setHeader("Location", "/login");
-      res.end();
-    }
+  async showAdminPage(req, res) {
+    await fs.readFile("./src/Views/admin.html", "utf-8", function (err, data) {
+      if (err) {
+        console.log(err.message);
+      }
+      res.writeHead(200, { "Content-Type": "text/html" });
+      res.write(data);
+      return res.end();
+    });
   }
 }
 
